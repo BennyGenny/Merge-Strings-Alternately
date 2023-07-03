@@ -1,0 +1,39 @@
+/*
+Author: Benjamin Gensler
+7/3/2023 11:05 AM
+
+References:
+at()
+https://www.geeksforgeeks.org/string-at-in-cpp/
+
+*/
+class Solution {
+public:
+    string mergeAlternately(string word1, string word2) {
+
+        //
+        int i = 0;
+        string altletters = "";
+
+        while (i < (word1.size() + word2.size()))
+        {
+
+            /*the following 2 if statement add the letter at a specific position
+              for each word, allowing to alternate one by one*/
+              
+            if(i < word1.size())
+            {
+                altletters += word1.at(i);
+            }
+
+            if( i < word2.size())
+            {
+                altletters += word2.at(i);
+            }
+            //add to the counter
+            i++;
+
+        }
+        return altletters;
+    }
+};
